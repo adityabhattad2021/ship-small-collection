@@ -1,6 +1,6 @@
 # Ship Small Collection
 
-A collection of small frontend projects built to sharpen my web development skills — one experiment at a time.
+A collection of small frontend projects built for fun.
 
 ## Projects
 

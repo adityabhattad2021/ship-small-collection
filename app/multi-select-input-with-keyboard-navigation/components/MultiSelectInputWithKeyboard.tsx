@@ -93,8 +93,6 @@ export default function MultiSelectInput({
         function handleClickOutside(e:MouseEvent){
             if(containerRef.current && !containerRef.current.contains(e.target as Node)){
                 setIsOpen(false);
-            }else{
-                console.log("What the fick");
             }
         }
 

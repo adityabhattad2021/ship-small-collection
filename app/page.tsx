@@ -11,6 +11,10 @@ const PROJECTS = [
     name: "Multi Select Input with Keyboard Navigation",
     route: "/multi-select-input-with-keyboard-navigation",
   },
+  {
+    name: "Multi Select Input with Keyboard Navigation 1",
+    route: "/multi-select-input-with-keyboard-navigation-1",
+  },
 ] as const;
 // ─────────────────────────────────────────────────────────────────────
 
@@ -66,7 +70,7 @@ export default function Home() {
                 </span>
 
                 {/* Dots leader + arrow */}
-                <span className="hidden flex-shrink-0 items-center gap-2 text-stone-600 group-hover:text-stone-400 sm:flex">
+                <span className="hidden shrink-0 items-center gap-2 text-stone-600 group-hover:text-stone-400 sm:flex">
                   <span className="text-xs tracking-[0.25em]">
                     &middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;
                   </span>
