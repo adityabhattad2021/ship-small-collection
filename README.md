@@ -12,6 +12,8 @@ A collection of small frontend projects built for fun.
 | 04 | **Virtualization** | Efficiently rendering large lists with virtualized scrolling |
 | 05 | **Infinite Scroll** | Load-more-on-scroll pagination pattern |
 | 06 | **Multi Select Input** | Searchable multi-select with full keyboard navigation |
+| 07 | **Multi Select Input** | Searchable multi-select with full keyboard navigation but better |
+| 06 | **Toast Notification** | Toast Notification |
 
 ## Tech Stack
 

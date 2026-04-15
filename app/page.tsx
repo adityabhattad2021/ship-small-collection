@@ -15,6 +15,10 @@ const PROJECTS = [
     name: "Multi Select Input with Keyboard Navigation 1",
     route: "/multi-select-input-with-keyboard-navigation-1",
   },
+  {
+    name:"Toast Notification",
+    route:"toast-notification"
+  }
 ] as const;
 // ─────────────────────────────────────────────────────────────────────
 
