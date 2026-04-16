@@ -1,4 +1,5 @@
 import { HTMLAttributes, ReactNode } from "react";
+import { useToast } from "../contexts/ToastProvider";
 
 interface NestedButtonProps extends HTMLAttributes<HTMLDivElement>{
     children: ReactNode,
@@ -11,7 +12,13 @@ export default function NestedButton({
     ...props
 }:NestedButtonProps){
 
+    const {addToast, toasts} = useToast();
+
     function hanldeOnClick(){
+        addToast({
+            text:"Yo! phase one works!",
+            type:"error"
+        })
         // toast will be called here
         onClick?.();
     }
