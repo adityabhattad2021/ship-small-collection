@@ -17,7 +17,7 @@ export default function NestedButton({
     function hanldeOnClick(){
         addToast({
             text:"Yo! phase one works!",
-            type:"error"
+            type:"success"
         })
         // toast will be called here
         onClick?.();

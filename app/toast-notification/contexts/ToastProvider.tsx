@@ -29,12 +29,14 @@ interface ToastProviderProps {
 }
 
 const MAX_VISIBLE_TOASTS = 4;
+const VISIBLE_DURATION = 4000; // ms
 
 export default function ToastProvider({
     children
 }: ToastProviderProps) {
 
     const [shouldCreatePortal, setShouldCreatePortal] = useState(false);
+    const [isHovering, setIsHovering] = useState(false);
     const [toasts, setToasts] = useState<Toast[]>([]);
 
     useEffect(()=>{
@@ -44,6 +46,23 @@ export default function ToastProvider({
 
     function addToast(toast: ToastWithoutId) {
         setToasts(prev => [...prev, { id: Date.now(), ...toast }])
+        setTimeout(()=>{
+            setToasts((prev)=>[...prev.slice(1)]);
+        },VISIBLE_DURATION);
+    }
+
+    function handleMouseEnter(index:number){
+        if(toasts.length - 1 !== index){
+            return;
+        }
+        setIsHovering(true);
+    }
+
+    function handleMouseLeave(index:number){
+        if(toasts.length - 1 !== index){
+            return;
+        }
+        setIsHovering(false);
     }
 
     return (
@@ -73,11 +92,13 @@ export default function ToastProvider({
                                 key={toast.id}
                                 style={{
                                     transition: 'transform 200ms ease-in',
-                                    transform: `translateY(${10*(toasts.length - (index + 1))}px) scale(${100 -  8 * (toasts.length - (index + 1))}%)`,
+                                    transform: isHovering ? `translateY(${120 * (toasts.length - (index + 1))}%)` : `translateY(${10*(toasts.length - (index + 1))}px) scale(${100 -  8 * (toasts.length - (index + 1))}%)`,
                                     // from 1 to toast length
                                     zIndex:`${(1+index)*50}`
                                 }}
-                                >
+                                onMouseEnter={()=>handleMouseEnter(index)}
+                                onMouseLeave={()=>handleMouseLeave(index)}    
+                            >
                                 {toast.text} {index}
                             </div>
                         )
