@@ -18,6 +18,10 @@ const PROJECTS = [
   {
     name:"Toast Notification",
     route:"toast-notification"
+  },
+  {
+    name:"Data Table",
+    route:"data-table"
   }
 ] as const;
 // ─────────────────────────────────────────────────────────────────────
